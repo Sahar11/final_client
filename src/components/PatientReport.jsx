@@ -15,8 +15,10 @@ export default function PatientReport() {
     .catch(error => console.log(`Error: ${error}`));
   
 }, []);
-return report.map((patient) => 
-<button className="links" key={patient.id}> {patient.report } </button>) 
+return report.map((patient, index) => (
+ <div><span key={index}>{patient.report}</span></div>
+))
+ 
   
   
 } 
