@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+.calendar-item {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ant-picker-calendar-full .ant-picker-panel .ant-picker-calendar-date-content {
+  height: 50px !important;
+}
+.appointment-time .list-group-item {
+  cursor: pointer;
+}
+.appointment-time .list-group-item.active {
+  background-color: #212529;
+}
+.appointment-time .list-group-item:hover {
+  background-color: #b5c8e8;
+  color: #333;
+}
