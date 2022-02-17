@@ -20,11 +20,11 @@ export default function Application() {
 
 
 return <Fragment>
-  <h1>Hi</h1>
+  {/* <h1>Hi</h1> */}
   <div><PatientReport /></div>
- <div><Patient /></div>
+ {/* <div><Patient /></div>
 { 
 state.map((user, idx) => <h1 key={idx}> {user.firstname} </h1>) 
-} 
+}  */}
 </Fragment> 
 }

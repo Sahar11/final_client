@@ -1,24 +1,21 @@
 import {useEffect, useState } from "react";
 import axios from "axios";
 import "./styles/report.css"
-//import { Fragment } from "react/cjs/react.production.min";
+import ReportTemplate from './ReportTemplate';
 
 export default function PatientReport() {
-  const [report, setReport] = useState([]);
+  const [state, setState] = useState([]);
  
   useEffect(() => {
     axios.get("http://localhost:8080/report")
     .then((res) => {
       console.log('response', res.data);
-      setReport(res.data)
+      setState(res.data)
     })
     .catch(error => console.log(`Error: ${error}`));
   
 }, []);
-return report.map((patient, index) => (
- <div><span key={index}>{patient.report}</span></div>
+return state.map((patient, index) => (
+ <div key={index} className="files"><img src={`/images/${patient.report}`} alt="file" /></div>
 ))
- 
-  
-  
 } 
