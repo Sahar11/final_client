@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <title>Excellabs</title>
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+
+    <!--Custom css-->
+    <link rel="stylesheet" href="css/style.css" />
+    <!--Fontawesome icon style-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!-- SignUp-screen -->
+    <div id="signUp-screen" class="bg-image">
+      <!-- Container -->
+      <div class="container-layout d-flex">
+        <!-- Logo -->
+        <div class="logo">
+          <img src="images/logo.png" alt="logo" />
+        </div>
+        <!-- Title -->
+        <div class="login-title">
+          <h1><i class="fa-solid fa-right-to-bracket"></i> SignUp</h1>
+        </div>
+        <!-- SignUp Form-sec -->
+        <form id="signUp" class="form-sec" action="" method="get">
+          <!-- First Name -->
+          <div class="input-group">
+            <label for="firstName">First Name :</label>
+            <input
+              type="text"
+              name="firstName"
+              class="input-style"
+              id="fname"
+              placeholder="Enter first Name"
+              required
+            />
+          </div>
+          <!-- Last Name -->
+          <div class="input-group">
+            <label for="lastName">Last Name :</label>
+            <input
+              type="text"
+              name="lastName"
+              class="input-style"
+              id="lfname "
+              placeholder="Enter last Name"
+              required
+            />
+          </div>
+          <!-- Health Card -->
+          <div class="input-group">
+            <label for="healthCard">Health Card :</label>
+            <input
+              type="text"
+              name="healthCard"
+              class="input-style"
+              id="hlthCard"
+              placeholder="Enter health Card"
+              required
+            />
+          </div>
+          <!-- DOB -->
+          <div class="input-group">
+            <label for="dob">DOB :</label>
+            <input
+              type="date"
+              name="dob"
+              class="input-style"
+              id="dob"
+              placeholder="Enter date of birth"
+              required
+            />
+          </div>
+          <!-- Email -->
+          <div class="input-group">
+            <label for="emailId ">Email :</label>
+            <input
+              type="email "
+              name="emailId "
+              class="input-style"
+              id="email"
+              placeholder="Enter Email"
+              required
+            />
+          </div>
+
+          <!-- SignUp-btn -->
+          <div class="signUp-btn-sec">
+            <input
+              type="submit"
+              value="Create Account"
+              class="btn"
+              id="signup-btn"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Jquery -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+
+    <!--Form validation js-->
+    <script src="js/script.js "></script>
+    <!-- Fontawesome icon js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js "></script>
+  </body>
+</html>
