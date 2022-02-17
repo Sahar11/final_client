@@ -1,9 +1,13 @@
-.container {
-  padding:20%;
-  background-color: azure;
+.alignModal {
+  margin-top: 50px;
+  /* background-color: antiquewhite; */
+  margin-left : 100px;
+  margin-right: 100px;
 }
 
-.files{
-  text-align: center;
-  
+.btnCenter {
+  margin: 2%;
+  border: 2px solid rgb(167, 166, 166);
+  border-radius: 12px;
+  padding: 5px;
 }
