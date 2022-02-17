@@ -16,6 +16,6 @@ export default function PatientReport() {
   
 }, []);
 return state.map((patient, index) => (
- <div key={index} className="files"><img src={`/images/${patient.report}`} alt="file" /></div>
+ <div key={index} className="files"><img src={patient.report} alt="file" /></div>
 ))
 } 
