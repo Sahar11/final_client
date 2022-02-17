@@ -4,6 +4,9 @@ import "./styles/report.css"
 import { Document, Page} from 'react-pdf';
 import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
+import FileSaver from 'file-saver';
+ import DownloadLink from "react-download-link";
+
 
 export default function PatientReport() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -43,12 +46,18 @@ export default function PatientReport() {
   
 }, []);
 
-<h1>Reports</h1>
 
-return state.map((patient, index) => (
-  <div key={index}  className="alignModal"  >
- <div className = "btnCenter"> <button className="btn btn-primary" onClick={showModal}>Display Report</button> </div>
- <div>
+
+return <div className="card"> <h1 className="heading" > View Reports</h1> 
+{ 
+state.map((patient, index) => (
+
+  <div key={index}  className="alignModal">
+ <div className = "btnCenter"> <button className="btn btn-primary" onClick={showModal}>Display Report</button>
+ <span className="patientDetails"><b className="space">{patient.test_type}</b><em>{new Date(patient.date).toLocaleDateString()}</em> </span> 
+ 
+  </div>
+      
       <Modal
         show={isOpen}
         onHide={hideModal}
@@ -63,9 +72,12 @@ return state.map((patient, index) => (
           <button className="btn btn-primary" onClick={hideModal}>Close</button>
         </Modal.Footer>
       </Modal>
+      
    </div>
-  </div>
+   
+  
 //  <div key={index} className="files"><img src={patient.report} alt="file" /></div>
 
-))
+)) }
+</div>
 } 

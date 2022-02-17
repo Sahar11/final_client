@@ -1,8 +1,8 @@
 .alignModal {
   margin-top: 50px;
   /* background-color: antiquewhite; */
-  margin-left : 100px;
-  margin-right: 100px;
+  margin-left : 150px;
+  margin-right: 150px;
 }
 
 .btnCenter {
@@ -10,4 +10,23 @@
   border: 2px solid rgb(167, 166, 166);
   border-radius: 12px;
   padding: 5px;
+}
+
+.heading {
+  padding:2%;
+  margin-left: 42%;
+  text-decoration: underline;
+}
+.patientDetails {
+  margin-left:600px;
+  align-items: space-between;
+}
+.space {
+  padding-right:7px;
+}
+
+.backgroundColor {
+ background-color: rgb(176, 209, 245) ;
+ border: 2px solid rgb(167, 166, 166);
+ 
 }
