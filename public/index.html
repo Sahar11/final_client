@@ -9,6 +9,7 @@
       name="description"
       content="Web site created using create-react-app"
     />
+    <title>Excellabs</title>
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -24,20 +25,245 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+
+    <!--Custom css-->
+    <link rel="stylesheet" href="css/style.css" />
+    <!--Fontawesome icon style-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
   </head>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <!--scroll up btn start-->
+    <div class="scroll-up-btn">
+      <i class="fas fa-angle-up"></i>
+    </div>
+    <!--scroll up btn end-->
+    <!-- Main wrapper-screen -->
+    <div class="wrapper" id="main-screen">
+      <!-- Header starts-->
+      <header>
+        <!-- Header-top starts-->
+        <div class="header-top pad-top-btm pad-lft-rth">
+          <div>
+            <!-- Find a Location Button -->
+            <button type="button " class="btn-style">
+              <i class="fa-solid fa-location-dot"></i> Find a Location
+            </button>
+            <button type="button " class="btn-style">
+              <!-- Book a Lab Visit Button -->
+              <i class="fa-solid fa-calendar-days"></i> Book a Lab Visit
+            </button>
+            <button type="button " class="btn-style">
+              <!-- Reports Button -->
+              <i class="fa-solid fa-file-chart-column"></i> Reports
+            </button>
+          </div>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+          <div>
+            <!-- LogIn Button -->
+            <button type="button " id="login-btn" class="btn-style">
+              <i class="fa-solid fa-user-lock"></i> LogIn
+            </button>
+            <!-- SignUp Button -->
+            <button type="button " id="signup-btn" class="btn-style">
+              <i class="fa-solid fa-right-to-bracket"></i> SignUp
+            </button>
+          </div>
+        </div>
+        <!-- Header-top ends-->
+        <!-- Header-middle starts-->
+        <div class="header-middle flex pad-lft-rth no-flex">
+          <!-- Logo -->
+          <div class="logo">
+            <img src="images/logo.png " alt="logo " />
+          </div>
+
+          <nav id="menu" class="nav-menu">
+            <ul>
+              <li>
+                <a href="#" class="active">Home</a>
+              </li>
+              <li>
+                <a href=" # ">About Us</a>
+              </li>
+              <li>
+                <a href="# ">News</a>
+              </li>
+              <li>
+                <a href="# ">Our Services</a>
+              </li>
+              <li>
+                <a href="# ">Contact Us</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div
+            id="hamburger-icon"
+            class="nav-menu"
+            onclick="toggleMobileMenu(this)"
+          >
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <ul class="mobile-menu">
+              <li>
+                <a href="#" class="active">Home</a>
+              </li>
+              <li>
+                <a href=" # ">About Us</a>
+              </li>
+              <li>
+                <a href="# ">News</a>
+              </li>
+              <li>
+                <a href="# ">Our Services</a>
+              </li>
+              <li>
+                <a href="# ">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Header-bottom starts -->
+        <div class="header-bottom"></div>
+        <!-- Header bottom ends -->
+      </header>
+      <!-- Header ends -->
+
+      <!-- Main starts -->
+      <main>
+        <!-- About-us -->
+        <section id="About-us">
+          <div class="container-layout">
+            <div class="about-us-sec">
+              <h1 class="heading">About Us</h1>
+              <div class="abou-us-info flex">
+                <div class="about-us-img">
+                  <img src="images/about-us.jpg" alt="about us" />
+                </div>
+                <div>
+                  <p>
+                    We care about people’s health and are committed to
+                    empowering a healthier you. At every step in the testing
+                    process, from collection to reporting, we provide caring,
+                    efficient, reliable and high-quality services. As a trusted
+                    partner supporting patients, healthcare providers, corporate
+                    customers and entire provincial healthcare systems, we are
+                    continually harnessing our medical expertise to build the
+                    best test offering while investing in technology to
+                    transform the delivery of health care.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <!-- Main ends -->
+
+      <footer id="footer">
+        <!-- Footer-top starts -->
+        <section class="footer-top contact-us" class="pad-lft-rth">
+          <div class="container-layout">
+            <h1 class="heading">Contact Us</h1>
+            <!--Contact us Form-sec -->
+            <form id="contactUs" class="form-sec" action="" method="get">
+              <!-- First Name -->
+              <div class="input-group">
+                <label for="firstName">First Name :</label>
+                <input
+                  type="text"
+                  name="firstName"
+                  class="input-style"
+                  id="fname"
+                  placeholder="Enter first Name"
+                  required
+                />
+              </div>
+              <!-- Last Name -->
+              <div class="input-group">
+                <label for="lastName">Last Name :</label>
+                <input
+                  type="text"
+                  name="lastName"
+                  class="input-style"
+                  id="lfname "
+                  placeholder="Enter last Name"
+                  required
+                />
+              </div>
+              <!-- Email -->
+              <div class="input-group">
+                <label for="emailId">Email :</label>
+                <input
+                  type="email"
+                  name="emailId"
+                  class="input-style"
+                  id="email"
+                  placeholder="Enter Email"
+                  required
+                />
+              </div>
+              <!-- Phone -->
+              <div class="input-group">
+                <label for="phone">Phone No :</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  class="input-style"
+                  id="phone"
+                  placeholder="Enter Phone Number"
+                  required
+                />
+              </div>
+              <!-- Message -->
+              <div class="input-group">
+                <label for="message">Message :</label>
+                <textarea
+                  id="msg"
+                  class="input-style"
+                  name="message"
+                  placeholder="Enter Message"
+                ></textarea>
+              </div>
+              <!-- contact-us-btn -->
+              <div class="contact-btn-sec">
+                <input
+                  type="submit"
+                  value="Submit"
+                  class="btn"
+                  id="contact-btn"
+                />
+              </div>
+            </form>
+          </div>
+        </section>
+        <!-- Footer-top starts -->
+        <!-- Footer-bottom starts -->
+        <section class="footer-bottom copyright" class="pad-lft-rth">
+          <p>© 2022 Sahar Halim, Satya Sindhu, Roda. All rights reserved.</p>
+        </section>
+        <!-- Footer-bottom ends -->
+      </footer>
+      <!-- Footer ends -->
+    </div>
+    <!-- Main Wrapper ends -->
+
+    <!-- Jquery -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+
+    <!--Form validation js-->
+    <script src="js/script.js "></script>
+    <!-- Fontawesome icon js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js "></script>
   </body>
 </html>
