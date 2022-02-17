@@ -1,0 +1,586 @@
+/* ------------ */
+/* Font family */
+/* ----------- */
+
+/* Roboto
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif&display=swap'); */
+/* Zen Kaku Gothic Antique */
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Serif&family=Zen+Kaku+Gothic+Antique&display=swap'); */
+/* Raleway */
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
+/* ------------------ */
+/* Reset css */
+/* ------------------ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset Margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0px;
+}
+
+/* Setup the body */
+body {
+  line-height: 1.5;
+  min-height: 100%;
+  font-family: "Raleway", sans-serif;
+}
+
+/* Make image easier responsive */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Make forms easier to work with */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --------------- */
+/* Utility classes */
+/* --------------- */
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.grid {
+  display: grid;
+}
+.container-layout {
+  padding: 0px;
+  margin: 0 auto;
+  max-width: 80rem;
+}
+.d-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: no-wrap;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+:focus-visible {
+  outline: 2px solid red;
+}
+#dob::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #ccc;
+}
+.input-style::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #ccc;
+}
+.input-style::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #ccc;
+}
+.input-style:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #ccc;
+}
+.input-style:-moz-placeholder {
+  /* Firefox 18- */
+  color: #ccc;
+}
+/* placeholder text style for date */
+input[type="date"]::-webkit-datetime-edit-text,
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field {
+  color: #ccc;
+}
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+/*scroll up btn start*/
+.scroll-up-btn {
+  position: fixed;
+  height: 45px;
+  width: 42px;
+  background: #d7172f;
+  right: 30px;
+  bottom: 10px;
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+  z-index: 999;
+  font-size: 30px;
+  border-radius: 6px;
+  border-bottom-width: 2px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.scroll-up-btn.show {
+  bottom: 30px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.scroll-up-btn:hover {
+  filter: brightness(90%);
+}
+/*scroll up btn end*/
+
+/* ---------------------- */
+/* login-screen css starts */
+/* ---------------------- */
+
+.logo {
+  padding: 30px 0px;
+}
+.bg-image {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background-image: url(../images/bg.jpg);
+  background-size: cover;
+}
+.btn {
+  background: linear-gradient(to bottom, #0094d4, #0082c2);
+  border: 0px solid #2196f3;
+  border-radius: 20px;
+  padding: 8px 30px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 0px;
+  transition: 250ms background ease;
+  -webkit-transition: 250ms background ease;
+  -moz-transition: 250ms background ease;
+  -o-transition: 250ms background ease;
+}
+.btn:hover {
+  background: linear-gradient(to bottom, #0094d4, #44ade1);
+}
+.btn-style:hover {
+  background: linear-gradient(to bottom, #0094d4, #44ade1);
+  color: #fff;
+}
+.form-sec {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 30px 20px;
+  border-radius: 8px;
+  border: 2px solid #eee;
+  box-shadow: 0px 0px 6px 3px #000;
+  margin: 0px 0px 30px;
+}
+.login-title h1 {
+  color: #000;
+  /* font-family: 'Zen Kaku Gothic Antique', sans-serif; */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 30px 0px;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+.input-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+.input-group label,
+.checkbox-group label {
+  color: #fff;
+}
+.input-style {
+  padding: 8px 10px;
+  margin: 8px 0px;
+  font-size: 14px;
+  color: #fff;
+  background-color: transparent !important;
+  border: 1px solid #fff;
+  border-radius: 20px;
+}
+.checkbox-group-sec {
+  display: flex;
+  align-items: center;
+  margin: 8px 0px;
+  justify-content: center;
+}
+.checkbox-group-sec label {
+  font-size: 16px;
+  margin-right: 15px;
+}
+
+/* radio-btn-style */
+/* The container */
+.lable-container {
+  display: block;
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 0px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.lable-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.lable-container:hover input ~ .checkmark {
+  background-color: #fff;
+}
+
+/* When the radio button is checked, add a blue background */
+.lable-container input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.lable-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.lable-container .checkmark:after {
+  top: 4px;
+  left: 4px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: white;
+}
+
+/* ---------------------- */
+/* login-screen css ends */
+/* --------------------- */
+
+/* --------------- */
+/* signUp css starts */
+/* --------------- */
+
+#dob {
+  width: 180px;
+  outline: none;
+  color: #fff;
+}
+
+/* --------------- */
+/* signUp css ends */
+/* --------------- */
+
+/* -------------------- */
+/* Main css starts */
+/* -------------------- */
+
+/* header css starts */
+.pad-top-btm {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.pad-lft-rth {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.header-top {
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 1px 0px 4px 2px #aaa;
+}
+.btn-style {
+  background: linear-gradient(to bottom, #424444, #808181, #000);
+  padding: 8px 15px;
+  border: 0px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 0px 2px;
+  color: #fff;
+}
+
+/* Menu css starts */
+.menu-btn {
+  display: none;
+}
+.nav-menu ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.nav-menu ul li a {
+  text-decoration: none;
+  color: #000;
+  padding: 5px 0px;
+}
+.nav-menu ul li a:hover {
+  color: #d7172f;
+}
+.nav-menu ul li a.active {
+  color: #d7172f;
+  font-weight: bold;
+  border-top: 2px solid #d7172f;
+  border-bottom: 2px solid #d7172f;
+  padding: 5px 0px;
+}
+.nav-menu ul li a:focus-visible {
+  outline: 2px solid transparent;
+}
+
+/* Mobile-menu css starts */
+#hamburger-icon {
+  margin: auto 0;
+  display: none;
+  cursor: pointer;
+}
+#hamburger-icon div {
+  width: 35px;
+  height: 3px;
+  background: linear-gradient(to bottom, #0094d4, #0082c2);
+  margin: 6px 0;
+  transition: 0.4s;
+  position: relative;
+  z-index: 999;
+}
+.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+.open .bar2 {
+  opacity: 0;
+}
+.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, -8px);
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7);
+}
+.open .mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+.mobile-menu li {
+  margin-bottom: 10px;
+}
+/* Mobile-menu css ends */
+
+/* Menu css ends */
+.header-bottom {
+  width: 100%;
+  height: 500px;
+  background: url(../images/banner.png) no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+/* header css ends */
+
+/* About us css starts  */
+
+.about-us-sec {
+  padding: 60px 0px;
+}
+.heading {
+  font-size: 30px;
+  margin: 0px auto 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+  background: #d7172f;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.abou-us-info {
+  gap: 20px;
+}
+.abou-us-info > div {
+  flex: 2;
+}
+.about-us-img img {
+  border-top-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+}
+.about-us-sec p {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  background: #eee;
+  padding: 20px;
+  border: 1px dashed #333;
+}
+/* About us css ends */
+
+/* -------------------- */
+/* Main css ends */
+/* -------------------- */
+
+/* ------------------ */
+/* footer css starts */
+/* ----------------- */
+.contact-us {
+  width: 100%;
+  min-height: 600px;
+  background: url(../images/contact_us.jpg) no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+}
+#contactUs {
+  width: 400px;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+}
+textarea {
+  resize: none;
+}
+.footer-bottom {
+  background: #333131;
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+}
+
+/* ------------------ */
+/* footer css ends */
+/* ----------------- */
+
+/* Media query css starts */
+
+/* Desktop resolution */
+@media screen and (min-width: 1366px) and (max-width: 2560px) {
+  .d-flex {
+    height: 100vh;
+    justify-content: center;
+  }
+}
+
+/* Mobile resolution */
+@media screen and (max-width: 767px) {
+  .abou-us-info {
+    flex-direction: column;
+    padding: 20px;
+  }
+  #contactUs {
+    width: 100%;
+  }
+  .no-flex {
+    /* display: block; */
+  }
+  .menu-btn {
+    display: block;
+    font-size: 30px;
+  }
+  .nav-menu ul {
+    display: none;
+  }
+  .nav-menu ul {
+    flex-direction: column;
+  }
+  header nav {
+    display: none;
+  }
+  #hamburger-icon {
+    display: block;
+  }
+  .nav-menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 0px;
+  }
+  .nav-menu ul li a:hover {
+    color: #d7172f;
+  }
+  .nav-menu ul li a.active {
+    color: #fff;
+    font-weight: bold;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    padding: 5px 0px;
+  }
+  .btn-style {
+    margin: 4px 2px;
+  }
+}
+
+/* Media query css ends */
