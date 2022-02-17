@@ -17,7 +17,7 @@ export default function LabUpload() {
    //console.log(file)
   let formData = new FormData();
    formData.append('file', upload);
-   formData.append('filename',formData.get('file').name )
+   //formData.append('filename',formData.get('file').name )
    formData.append('patient_id', patient);
    formData.append('fullname', name);
    formData.append('health', health);
