@@ -28,7 +28,7 @@ export default function Signup() {
     const details = {
       first_name: first_name,
       last_name: last_name,
-      healthcard: Healthcard,
+      healthcard: healthcard,
       dob: dob,
       email: email,
     };
