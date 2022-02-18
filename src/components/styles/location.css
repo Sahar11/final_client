@@ -6,11 +6,11 @@
   margin-top: 50px;
   /* background-color: antiquewhite; */
   color:#007bff;
-  margin-left : 150px;
-  margin-right: 150px;
+  margin-left: 500px;
+  font-family: 'Times New Roman', Times, serif;
 }
 .address_space {
-  padding:3% 30% 3% 30%;
+  padding:3% 25% 3% 25%;
   
 }
 .scroll {
@@ -25,5 +25,5 @@
 
 
 .search {
-  padding:10% 30% 5% 30%;
+  padding:6% 30% 5% 30%;
 }

@@ -35,8 +35,8 @@ return <div>
   {
   filteredData.length === 0 ? <div>No result found</div> : filteredData.map((location,index) => {
   return <div key={index} > 
-  <table class="table address">
-  <tr class="list-group-item">{location.addres} <br/><br/>
+  <table class="table ">
+  <tr class="list-group-item address">{location.addres} <br/><br/>
    Contact: {location.phone_number}
    <br/>
    <br/>

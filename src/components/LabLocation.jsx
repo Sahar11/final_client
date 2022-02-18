@@ -10,11 +10,11 @@ export default function LabLocation() {
   
   
 
-  return <div className="container-fluid">
-    <div clasName="heading">Lab Location</div>
+  return <div className="">
+    <div className="heading">Find Location</div>
  
 {/* flex */}
-<div className="row add_padding">
+<div className="row">
   
   <div className="col-lg-12">
    
