@@ -6,27 +6,22 @@
 }
 
 .btnCenter {
-  margin: 2%;
+  margin: 2% 2% 0 1%;
   border: 2px solid rgb(167, 166, 166);
-  border-radius: 12px;
-  padding: 5px;
+  
+  padding: 3px 3px 0px 3px;
 }
 
 .heading {
   padding:2%;
-  margin-left: 42%;
+  margin-left: 40%;
   text-decoration: underline;
+  color:#0d6efd;
 }
 .patientDetails {
-  margin-left:600px;
-  align-items: space-between;
+  float:right;
 }
 .space {
   padding-right:7px;
 }
 
-.backgroundColor {
- background-color: rgb(176, 209, 245) ;
- border: 2px solid rgb(167, 166, 166);
- 
-}
