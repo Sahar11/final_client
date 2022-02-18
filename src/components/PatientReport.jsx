@@ -9,12 +9,11 @@ import FileSaver from 'file-saver';
 
 
 export default function PatientReport() {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [title, setTitle] = React.useState("");
-  const [timer, setTimer] = React.useState(0);
-  const [startTime, setStartTime] = React.useState(0);
-  const [endTime, setEndTime] = React.useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+  const [title, setTitle] = useState("");
   const [patient, setPatient] = useState({});
+  const [search, setSearch] = useState("");
+  const [filteredData, setFilteredData] = useState([]);
 
   const showModal = (patient) => {
     setIsOpen(true);
@@ -26,14 +25,6 @@ export default function PatientReport() {
 
   const hideModal = () => {
     setIsOpen(false);
-  };
-
-  const startTimer = () => {
-    setStartTime(Date.now());
-  };
-
-  const modalLoaded = () => {
-    setEndTime(Date.now());
   };
 
   const download= (url) => {
@@ -53,16 +44,29 @@ export default function PatientReport() {
   
 }, []);
 
+useEffect(() => {
+  setFilteredData(
+    state.filter((patient) => patient.test_type.toLowerCase().includes(search.toLowerCase()))
+  )
+ 
+ }, [search, state]);
 
 
-return <div className="card"> <h1 className="heading" > View Reports</h1> 
+
+return <div className="card"> <div className="heading-back"><h1 className="heading" > View Reports</h1> </div>
+  <div className="search">
+   <input className="form-control" type="text" placeholder="Enter test type..." onChange={(e) => {
+     setSearch(e.target.value)
+   }} />
+ </div>
 { 
-state.map((patient) => (
+filteredData.length === 0 ? <div className="search">No result found</div> :
+filteredData.map((patient) => (
 
   <div key={patient.id}  className="alignModal">
- <div className = "btnCenter"> <button className="btn btn-primary" onClick={() => showModal(patient)}>Display Report</button> 
- <button className="btn btn-primary" onClick={() => download(patient.download_url)}>download</button>
- <span className="patientDetails"><b className="space">{patient.test_type}</b><em>{new Date(patient.date).toLocaleDateString()}</em> </span> 
+ <div className = "btnCenter row"><div className="col-lg-8"> <button className="btn-sm btn-primary" onClick={() => showModal(patient)}>Display Report</button> 
+ <button className="btn-sm btn-primary" onClick={() => download(patient.download_url)}>download</button></div>
+ <div className="col-lg-3 space">{patient.test_type}{new Date(patient.date).toLocaleDateString()} </div> 
  
   </div>
   </div>
@@ -70,14 +74,13 @@ state.map((patient) => (
       <Modal
         show={isOpen}
         onHide={hideModal}
-        onEnter={startTimer}
-        onEntered={modalLoaded}
+        size="lg"
       >
         
         <Modal.Header>
           <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
-        <Modal.Body><div>{patient.id}<img src={patient.report_url} alt="report" width="200px" height="300px" /></div></Modal.Body>
+        <Modal.Body><img src={patient.report_url} alt="report" width="600px" height="600px" /></Modal.Body>
         <Modal.Footer>
           <button className="btn btn-primary" onClick={hideModal}>Close</button>
         </Modal.Footer>

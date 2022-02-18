@@ -1,32 +1,40 @@
 .alignModal {
-  margin-top: 50px;
+  margin-top: 30px;
   /* background-color: antiquewhite; */
-  margin-left : 150px;
-  margin-right: 150px;
+  margin-left : 250px;
+  margin-right: 250px;
 }
 
 .btnCenter {
-  margin: 2%;
-  border: 2px solid rgb(167, 166, 166);
-  border-radius: 12px;
-  padding: 5px;
+  border: 2px solid rgb(245, 244, 244);
+  border-radius: 5px;
+  /* padding: 3px; */
+width:100%;
+
 }
 
 .heading {
-  padding:2%;
+  padding: 2%;
   margin-left: 42%;
   text-decoration: underline;
+  font-size: 30px;
+  color: #0d6efd;
+ 
 }
-.patientDetails {
-  margin-left:600px;
-  align-items: space-between;
+.heading-back {
+  background-color: #d3e4ff;
 }
+
 .space {
-  padding-right:7px;
+  word-spacing: 30px;
 }
 
 .backgroundColor {
  background-color: rgb(176, 209, 245) ;
  border: 2px solid rgb(167, 166, 166);
  
+}
+
+.search {
+  padding:5% 40% 1% 40%;
 }
