@@ -31,7 +31,7 @@ return <div>
    }} />
  </div>
  <div className = "address_space">
-   <div className = "scroll">
+   <div className = "scroll ">
   {
   filteredData.length === 0 ? <div>No result found</div> : filteredData.map((location,index) => {
   return <div key={index} > 

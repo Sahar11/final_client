@@ -10,7 +10,7 @@ export default function LabLocation() {
   
   
 
-  return <div className="">
+  return <div className="background">
     <div className="heading">Find Location</div>
  
 {/* flex */}

@@ -4,6 +4,7 @@
 }
 .heading {
   margin-top: 50px;
+  font-size: 30px;
   /* background-color: antiquewhite; */
   color:#007bff;
   margin-left: 500px;
@@ -19,9 +20,9 @@
   text-align: center;
   height:400px;
 }
-.add_padding {
-
-}
+/* .background {
+  background-color: #e6f1fd;
+} */
 
 
 .search {
