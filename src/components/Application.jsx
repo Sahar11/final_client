@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Fragment } from "react/cjs/react.production.min";
 import Patient from "./Patients/Patient";
-import { Calendar, Alert, Steps } from "antd";
+import { Calendar, Alert, Steps, Button } from "antd";
 import { CheckOutlined, CloseOutlined } from "@ant-design/icons";
 import Instructions from "./Instructions";
+import { CaretLeftOutlined, CaretRightOutlined } from "@ant-design/icons";
 
 const { Step } = Steps;
 const unavailable = [
@@ -86,24 +87,6 @@ export default function Application() {
   const [step, setStep] = useState(0);
   const [availableTime, setAvailableTime] = useState([]);
 
-  // let counter = 0;
-  // let timer = 3;
-  // let timeList = [];
-  // while (true) {
-  //   if (timer === 6) {
-  //     break;
-  //   }
-  //   if (counter === 60) {
-  //     timer++;
-  //     timeList.push(timer);
-  //     counter = 0;
-  //   } else {
-  //     timeList.push(timer + counter);
-  //   }
-  //   counter += 10;
-  // }
-  // console.log(timeList);
-
   useEffect(() => {
     axios
       .get("http://localhost:8080")
@@ -115,20 +98,31 @@ export default function Application() {
   }, []);
 
   const onSelect = (value) => {
-    setValue(value);
-    setSelectedValue(value);
-  };
-
-  const onPanelChange = (value) => {
+    console.log(value);
     setValue(value);
   };
 
   return (
-    <Fragment>
-      <div>
-        <Patient />
+    <div className="p-4">
+      <div className="d-flex justify-content-between mb-4">
+        <Button
+          type="primary"
+          icon={<CaretLeftOutlined />}
+          onClick={() => setStep(step - 1)}
+          disabled={step === 0}
+        >
+          Back
+        </Button>
+        <h1>ExcelLabs Appointment Booking</h1>
+        <Button
+          type="primary"
+          onClick={() => setStep(step + 1)}
+          disabled={step === 2}
+        >
+          Next <CaretRightOutlined />
+        </Button>
       </div>
-      <div style={{ padding: "2rem" }}>
+      <div className="mb-4">
         <Steps current={step}>
           <Step
             title="Select lab"
@@ -145,7 +139,10 @@ export default function Application() {
         </Steps>
       </div>
       {step === 0 ? (
-        <div> <button onClick={() => setStep(1)}>I agree</button></div>
+        <div>
+          {" "}
+          <button onClick={() => setStep(1)}>I agree</button>
+        </div>
       ) : step === 1 ? (
         <div>
           <Instructions />
@@ -165,9 +162,9 @@ export default function Application() {
                   fullscreen={true}
                   value={value}
                   onSelect={onSelect}
-                  onPanelChange={onPanelChange}
                   disabledDate={(CellDate) =>
-                    CellDate.isBefore(new Date(), "day")
+                    CellDate.isBefore(new Date(), "day") ||
+                    unavailable.includes(CellDate.format("MM-DD-YYYY"))
                   }
                   dateCellRender={(CellDate) => {
                     let textDate = CellDate.format("MM-DD-YYYY");
@@ -260,7 +257,18 @@ export default function Application() {
                           return true;
                         })
                         .map((slot) => {
-                          return <li class="list-group-item">{slot}</li>;
+                          return (
+                            <li
+                              className={
+                                selectedValue === slot
+                                  ? "list-group-item active"
+                                  : "list-group-item"
+                              }
+                              onClick={() => setSelectedValue(slot)}
+                            >
+                              {slot}
+                            </li>
+                          );
                         })}
                     </ul>
                   </div>
@@ -270,6 +278,6 @@ export default function Application() {
           </div>
         </div>
       )}
-    </Fragment>
+    </div>
   );
 }
