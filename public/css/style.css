@@ -138,7 +138,7 @@ input[type="date"]::-webkit-datetime-edit-year-field {
   position: fixed;
   height: 45px;
   width: 42px;
-  background: #d7172f;
+  background: #0d6efd;
   right: 30px;
   bottom: 10px;
   text-align: center;
@@ -350,10 +350,11 @@ input[type="date"]::-webkit-datetime-edit-year-field {
   box-shadow: 1px 0px 4px 2px #aaa;
 }
 .btn-style {
-  background: linear-gradient(to bottom, #424444, #808181, #000);
+  /* background: linear-gradient(to bottom, #424444, #808181, #000); */
+  background-color: #0d6efd;
   padding: 8px 15px;
   border: 0px;
-  border-radius: 20px;
+  border-radius: 10px;
   font-size: 14px;
   cursor: pointer;
   margin: 0px 2px;
@@ -378,13 +379,14 @@ input[type="date"]::-webkit-datetime-edit-year-field {
   padding: 5px 0px;
 }
 .nav-menu ul li a:hover {
-  color: #d7172f;
+  color: #0d6efd;
 }
 .nav-menu ul li a.active {
-  color: #d7172f;
+  color: #0d6efd;
   font-weight: bold;
-  border-top: 2px solid #d7172f;
-  border-bottom: 2px solid #d7172f;
+  border-top: 2px solid #0d6efd;
+  border-bottom: 2px solid #0d6efd;
+  /* border-bottom: 2px solid #d7172f; */
   padding: 5px 0px;
 }
 .nav-menu ul li a:focus-visible {
@@ -465,7 +467,7 @@ input[type="date"]::-webkit-datetime-edit-year-field {
   width: 200px;
   font-family: "Raleway", sans-serif;
   color: #fff;
-  background: #d7172f;
+  background: #0d6efd;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
@@ -569,7 +571,7 @@ textarea {
     padding: 5px 0px;
   }
   .nav-menu ul li a:hover {
-    color: #d7172f;
+    color: #0d6efd;
   }
   .nav-menu ul li a.active {
     color: #fff;
