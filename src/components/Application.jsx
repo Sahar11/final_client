@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Fragment } from 'react/cjs/react.production.min';
 //import Patient from './Patients/Patient';
 import LabUpload from './LabUpload';
-import PatientReport from './PatientReport';
+//import PatientReport from './PatientReport';
 
 export default function Application() {
   const [state, setState] = useState([]);
@@ -22,9 +22,9 @@ return <Fragment>
   
  
  <div><LabUpload /></div>
- <div><PatientReport /></div>
-{ 
+ 
+{/* { 
 state.map((user, idx) => <h1 key={idx}> {user.firstname} </h1>) 
-} 
+}  */}
 </Fragment> 
 }
