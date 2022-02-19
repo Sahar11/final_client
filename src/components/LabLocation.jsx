@@ -11,8 +11,9 @@ export default function LabLocation() {
   
 
   return <div className="background">
+    <div className="heading-border">
     <div className="heading">Find Location</div>
- 
+ </div>
 {/* flex */}
 <div className="row">
   

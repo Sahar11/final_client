@@ -36,11 +36,12 @@ return <div>
   filteredData.length === 0 ? <div>No result found</div> : filteredData.map((location,index) => {
   return <div key={index} > 
   <table class="table ">
-  <tr class="list-group-item address">{location.addres} <br/><br/>
+  <tr class=" address">{location.addres} <br/><br/>
    Contact: {location.phone_number}
    <br/>
    <br/>
   <button className="btn-sm btn-primary">Check In Online</button>
+  <hr />
   </tr>
   
 </table>
