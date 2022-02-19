@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './styles/location.css'
 import Location from "./Location";
-import Search from "./Search";
 import axios from "axios";
 import './styles/location.css';
 
@@ -10,7 +9,7 @@ export default function LabLocation() {
   
   
 
-  return <div className="background">
+  return <div className="">
     <div className="heading-border">
     <div className="heading">Find Location</div>
  </div>

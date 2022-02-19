@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Fragment } from 'react/cjs/react.production.min';
 import Patient from './Patients/Patient';
-import PatientReport from './PatientReport';
 import LabLocation from './LabLocation';
 
 export default function Application() {
