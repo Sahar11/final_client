@@ -2,7 +2,8 @@ import './css/style.css';
 // import './css/images/banner.png';
 // import './css/images/bg.jpg';
 // import './css/images/contact_us.jpg';
-import './css/images/logo.png';
+import logo from './css/images/logo.png';
+import aboutus from './css/images/about-us.jpg';
 // import './css/images/about-us.jpg';
 export default function MainPage() {
 
@@ -47,7 +48,7 @@ export default function MainPage() {
       <div className="header-middle flex pad-lft-rth no-flex">
         {/* <!-- Logo --> */}
         <div className="logo">
-          <img src="logo" alt="logo " />
+          <img src={logo} alt="logo " />
         </div>
 
         <nav id="menu" className="nav-menu">
@@ -112,7 +113,7 @@ export default function MainPage() {
             <h1 className="heading">About Us</h1>
             <div className="abou-us-info flex">
               <div className="about-us-img">
-                <img src="./images/about-us.jpg" alt="about us" />
+                <img src={aboutus} alt="about us" />
               </div>
               <div>
                 <p>
