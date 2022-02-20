@@ -2,11 +2,8 @@ import './css/style.css';
 import { useState } from 'react';
 import logo from './css/images/logo.png';
 import aboutus from './css/images/about-us.jpg';
-import {BrowserRouter as Router, Link, Routes, Route} from 'react-router-dom';
 import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
-import LoginForm from './LoginForm';
-import Patient from './Patient';
 
 export default function MainPage() {
  
@@ -54,6 +51,11 @@ export default function MainPage() {
             {/* <!-- Reports Button --> */}
             <i className="fa-solid fa-file-chart-column"></i> Reports
           </button>
+          <form action='/sms'>
+          <button type="button " className="btn-style">
+            <i className="fa-solid fa-location-dot"></i> Checkin
+          </button>
+          </form>
         </div>
 
         <div>

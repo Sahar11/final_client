@@ -48,10 +48,8 @@ export default function LabMain() {
         <form action='/login'>
         <div>
           {/* <!-- LogIn Button --> */}
+ admin@email.com
           
-          <button type="button " id="login-btn" className="btn-style">
-            <i className="fa-solid"></i> admin@email.com
-          </button>
           
           {/* <!-- SignUp Button --> */}
           <button type="button " id="signup-btn" className="btn-style">

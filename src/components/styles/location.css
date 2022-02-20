@@ -1,0 +1,46 @@
+.address {
+  color: #007bff;
+  font-size: 15px;
+}
+.heading {
+  margin-top: 12px;
+  margin-bottom: 20px;
+  margin-left:250px;
+  font-size: 30px;
+  color:#007bff;
+  text-decoration: underline;
+  font-family: 'Times New Roman', Times, serif;
+}
+.heading-border{
+  /* border: 1px solid gray;
+  border-radius: 10px;
+  background-image: linear-gradient(#c3e0fc,#99c0fa ); */
+  margin: 10% 25% 3% 25%;
+}
+.address_space {
+  padding:3% 30% 3% 30%;
+  
+}
+.scroll {
+  overflow-x: scroll;
+  overflow-y: scroll;
+  text-align: center;
+  height:400px;
+}
+.background-border {
+  border: 1px solid black;
+  margin:5% 15%;
+  display:block;
+  border-radius: 10px;
+}
+
+
+.search {
+  padding:5% 35% 5% 35%;
+}
+
+hr {
+  width:50%;
+  
+  margin-left:25%;
+}
