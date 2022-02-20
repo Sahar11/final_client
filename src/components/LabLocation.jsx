@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './styles/location.css'
 import Location from "./Location";
-import axios from "axios";
 import './styles/location.css';
+import './styles/map.css';
 
 export default function LabLocation() {
   
@@ -19,10 +18,8 @@ export default function LabLocation() {
   <div className="col-lg-12">
    
     <Location />
-   
-   
+  
   </div>
-  {/* <div className="col-lg-6"></div> */}
   </div>
   {/* flex end */}
   </div>

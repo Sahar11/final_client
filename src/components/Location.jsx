@@ -38,9 +38,7 @@ return <div>
   <table class="table ">
   <tr class=" address">{location.addres} <br/><br/>
    Contact: {location.phone_number}
-   <br/>
-   <br/>
-  <button className="btn-sm btn-primary">Check In Online</button>
+  
   <hr />
   </tr>
   
