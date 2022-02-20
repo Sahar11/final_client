@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Fragment } from "react/cjs/react.production.min";
 import Patient from "../Patients/Patient";
-import { Calendar, Alert, Steps, Button } from "antd";
+import { Calendar, Alert, Steps, Button, Select } from "antd";
 import { CheckOutlined, CloseOutlined } from "@ant-design/icons";
 import Instructions from "./Step2";
 import Step4 from "./Step4";
+// import Step1 from "./LabLocation";
 import { CaretLeftOutlined, CaretRightOutlined } from "@ant-design/icons";
 
+const { Option } = Select;
 const { Step } = Steps;
 const unavailable = [
   "02-16-2022",
@@ -86,7 +88,25 @@ export default function Appointment() {
   const [value, setValue] = useState(0);
   const [selectedValue, setSelectedValue] = useState("");
   const [step, setStep] = useState(0);
-
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+const locations=[
+  {value:1,text:"credit valley hospital"}
+]
+  function onInfoChange(info, value) {
+    if (info === "firstname") {
+      setFirstName(value);
+    } else if (info === "lastname") {
+      setLastName(value);
+    } else if (info === "email") {
+      setEmail(value);
+    } else {
+      setPhoneNumber(value);
+    }
+  }
+*
   useEffect(() => {
     axios
       .get("http://localhost:8080")
@@ -101,7 +121,7 @@ export default function Appointment() {
     console.log(value);
     setValue(value);
   };
-
+  const options = locations.map(d => <Option key={d.value}>{d.text}</Option>);
   return (
     <div className="p-4">
       <div className="d-flex justify-content-between mb-4">
@@ -117,7 +137,7 @@ export default function Appointment() {
         <Button
           type="primary"
           onClick={() => setStep(step + 1)}
-          disabled={step === 3}
+          disabled={step === 2}
         >
           Next <CaretRightOutlined />
         </Button>
@@ -125,28 +145,25 @@ export default function Appointment() {
       <div className="mb-4">
         <Steps current={step}>
           <Step
-            title="Select lab"
-            description="Select a lab for your appointment"
-          />
-          <Step
             title="Patient Instructions"
             description="Follow these instructions"
           />
           <Step
-            title="Choose a date"
-            description="Select a date for your appointment"
+            title="Choose a lab location and date"
+            description="Select a location and date for your appointment"
           />
-          <Step title="Confirmation" />
+          <Step
+            title="Confirmation"
+            description="Provide contact details for confirmation"
+          />
         </Steps>
       </div>
       {step === 0 ? (
-        <div> </div>
-      ) : step === 1 ? (
         <div>
           <Instructions />
-          <button onClick={() => setStep(2)}>Confirm</button>
+          <button onClick={() => setStep(1)}>Confirm</button>
         </div>
-      ) : step === 2 ? (
+      ) : step === 1 ? (
         <div style={{ padding: "2rem" }}>
           {/* <Alert
           message={`You selected date: ${
@@ -155,6 +172,22 @@ export default function Appointment() {
         /> */}
           <div className="container-fluid">
             <div className="row">
+              <div className="col-md-12">
+                <Select
+                  showSearch
+                  // value={this.state.value}
+                  placeholder="Type to search"
+                  //style={this.props.style}
+                  defaultActiveFirstOption={false}
+                  showArrow={false}
+                  filterOption={false}
+                  // onSearch={this.handleSearch}
+                  // onChange={this.handleChange}
+                  notFoundContent={null}
+                >
+                  {options}
+                </Select>
+              </div>
               <div className="col-md-6">
                 <Calendar
                   fullscreen={true}
@@ -250,7 +283,13 @@ export default function Appointment() {
           </div>
         </div>
       ) : (
-        <Step4 />
+        <Step4
+          firstName={firstName}
+          lastName={lastName}
+          email={email}
+          phoneNumber={phoneNumber}
+          onChange={onInfoChange}
+        />
       )}
     </div>
   );

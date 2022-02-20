@@ -1,10 +1,7 @@
 import { useState } from "react";
 
-export default function Confirmation() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+export default function Confirmation({firstName,lastName,email,phoneNumber,onChange}) {
+  
   return (
     <div className="container mt-5">
       <div className="row">
@@ -14,11 +11,11 @@ export default function Confirmation() {
             <div className="row ms-4">
               <div className="col-md-6">
                 <label>First Name</label>
-                <input className="form-control" placeholder="First Name" />
+                <input className="form-control" placeholder="First Name" value={firstName} onChange={(e)=>onChange("firstname",e.target.value)}/>
               </div>
               <div className="col-md-6">
                 <label>Last Name</label>
-                <input className="form-control" placeholder="Last Name" />
+                <input className="form-control" placeholder="Last Name" value={lastName} onChange={(e)=>onChange("lastname",e.target.value)} />
               </div>
               <div className="col-md-12 md-3">
                 <label>Email</label>
@@ -26,6 +23,8 @@ export default function Confirmation() {
                   className="form-control"
                   placeholder="email"
                   type="email"
+                  value={email}
+                  onChange={(e)=>onChange("email",e.target.value)}
                 />
               </div>
             </div>
@@ -51,7 +50,7 @@ export default function Confirmation() {
                 issues with ExcelLabs appointments you make.
               </p>
               <label className="mt-4 fs-5">Phone Number</label>
-              <input className="form-control" placeholder="phone number" />
+              <input className="form-control" placeholder="phone number" value={phoneNumber} onchange={(e)=>onChange("phonenumber",e.target.value)} />
             </div>
           </div>
         </div>
