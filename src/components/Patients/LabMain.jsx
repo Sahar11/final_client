@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import LoginForm from './LoginForm';
 import Patient from './Patient';
 
-export default function MainPage() {
+export default function LabMain() {
  
   const [isOpen, setIsOpen] = useState(false);
   const [title, setTitle] = useState("Transitioning...");
@@ -26,10 +26,6 @@ export default function MainPage() {
     setTitle("Modal Ready");
   };
 
-  const onSubmitHandler = (e) => {
-    //e.preventDefault();
-     window.location.href="/patient"
-  }
 
   return <div> <div className="scroll-up-btn">
     <i className="fas fa-angle-up"></i>
@@ -42,34 +38,27 @@ export default function MainPage() {
       {/* <!-- Header-top starts--> */}
       <div className="header-top pad-top-btm pad-lft-rth">
         <div>
-          {/* <!-- Find a Location Button --> */}
-          <button type="button " className="btn-style">
-            <i className="fa-solid fa-location-dot"></i> Find a Location
-          </button>
-          <button type="button " className="btn-style">
-            {/* <!-- Book a Lab Visit Button --> */}
-            <i className="fa-solid fa-calendar-days"></i> Book a Lab Visit
-          </button>
+    
+        
           <button type="button " className="btn-style">
             {/* <!-- Reports Button --> */}
-            <i className="fa-solid fa-file-chart-column"></i> Reports
+            <i className="fa-solid fa-file-chart-column"></i>Upload Reports
           </button>
         </div>
-
+        <form action='/login'>
         <div>
           {/* <!-- LogIn Button --> */}
-          <form action='/login'>
+          
           <button type="button " id="login-btn" className="btn-style">
-            <i className="fa-solid fa-user-lock"></i> denzel@email.com
+            <i className="fa-solid"></i> admin@email.com
           </button>
           
           {/* <!-- SignUp Button --> */}
-       
           <button type="button " id="signup-btn" className="btn-style">
             <i className="fa-solid fa-right-to-bracket"></i> Logout
           </button>
-          </form>
         </div>
+        </form>
       </div>
       {/* <!-- Header-top ends-->
       <!-- Header-middle starts--> */}
@@ -250,43 +239,5 @@ export default function MainPage() {
     {/* <!-- Footer ends --> */}
   </div>
   {/* <!-- Main Wrapper ends -->*/}
-   {/* Modal Open */}
-
-   <Modal
-        show={isOpen}
-        onHide={hideModal}
-        onEntered={modalLoaded}
-    
-      >
-        <Modal.Header size='md'>
-          <Modal.Title>{title}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-        <form onSubmit={onSubmitHandler} action="/lab">
-   <div className="form-group">
-     <label for="email">Email address:</label>
-     <input type="email" className="form-control" id="email" />
-   </div>
-   <div className="form-group">
-     <label for="pwd">Password:</label>
-     <input type="password" className="form-control" id="pwd" />
-   </div>
-   <div className="checkbox checkbox-space">
-     <label><input type="checkbox" /> Patient</label>
-     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-     <label><input type="checkbox" /> Admin</label>
-   </div>
-   
-   <button type="submit" className="btn btn-default">Submit</button>
- </form>
-          </Modal.Body>
-        <Modal.Footer>
-          <button className="btn btn-primary" onClick={hideModal}>Cancel</button>
-        
-        </Modal.Footer>
-      </Modal>
-      
-    
- 
   </div>
 }
