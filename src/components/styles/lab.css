@@ -1,0 +1,49 @@
+
+div.form
+{
+    /* display: block; */
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 8px;
+    margin-top: 4%;
+}
+form
+{
+    /* display: inline-block; */
+    margin: 3%;
+    text-align: left;
+   
+}
+#myForm {
+    margin: 3% 8%;
+}
+
+.btnPadding {
+    margin-left: 400px;
+    /* margin-right: 400px; */
+}
+
+.heading {
+    color: #fff;
+    font-size: 30px;
+    text-decoration: underline;
+    /* background-color: #cfe2ff; */
+}
+.headingDiv {
+    margin: 4% 20%;
+   
+padding-top: 3%;
+padding-bottom: 3%;
+/* background-image: linear-gradient(#d9e6fc, #a6d2fc);
+border: 2px solid rgb(182, 181, 181);
+border-radius: 8px; */
+}
+.successmsg {
+   color: #0d6efd;
+   /* border:2px solid rgb(230, 229, 229); */
+   border-radius:5px;
+   background-color: #cfe2ff;
+   width:40%;
+   margin:20px 30% 10px 30%;
+
+}

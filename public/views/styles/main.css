@@ -1,0 +1,40 @@
+.img-container {
+  margin-bottom: 50px;
+  height: 600px;
+}
+.About us {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+}
+.Location {
+  position: relative;
+  right: 0px;
+  width: 300px;
+  border: 3px solid #73ad21;
+  padding: 10px;
+}
+
+.Email {
+  position: relative;
+}
+footer {
+  margin-top: 50px;
+}
+.footer-top {
+  display: flex;
+  justify-content: center;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+}
+a {
+  text-decoration: none;
+  color: blue;
+}
+.img-container {
+  margin-top: 20px;
+}

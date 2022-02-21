@@ -3,11 +3,10 @@ import './App.css';
 import 'antd/dist/antd.css';
 import Application from './components/Application';
 
+export default function App() {
+
+  return (<><Application /></>)
 
 
-export default function App(){
- 
-  return (<Application/>)
-  
 
 }
