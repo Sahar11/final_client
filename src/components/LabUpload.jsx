@@ -1,7 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
 import "./styles/lab.css";
-import $ from 'jquery'
+import $ from 'jquery';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Routes, Route, Link, Switch } from "react-router-dom";
+import './styles/location.css';
+import './Patients/css/style.css';
 
 export default function LabUpload() {
  const [name, setName] = useState("");
@@ -39,8 +43,44 @@ export default function LabUpload() {
 const fileSelectedHandler = event => {
   setUpload(event.target.files[0] )
 }
-  return (
-   
+  return ( <div><div className="scroll-up-btn">
+  <i className="fas fa-angle-up"></i>
+</div>
+{/* <!--scroll up btn end-->
+<!-- Main wrapper-screen --> */}
+<div className="wrapper" id="main-screen">
+  {/* <!-- Header starts--> */}
+  <header>
+    {/* <!-- Header-top starts--> */}
+    <div className="header-top pad-top-btm pad-lft-rth">
+      <div>
+        {/* <!-- Find a Location Button --> */}
+        <Link to="/Lab">
+        <button type="button" className="btn-style">
+          <i className="fa-solid fa-location-dot"></i> Home
+        </button>
+        </Link>
+        
+     
+      </div>
+
+      <div className="login-padding">
+        {/* <!-- LogIn Button --> */}
+      
+        {/* <!-- SignUp Button --> */}
+        admin@email.com
+        <Link to='/login'>
+        <button type="button " id="signup-btn" className="btn-style">
+          <i className="fa-solid fa-right-to-bracket"></i> Logout
+        </button>
+       
+        </Link>
+      </div>
+    </div>
+    </header>
+    {/* <!-- Header-top ends-->*/}
+    </div>
+
     <div className="form container-sm">
     <div className="headingDiv"> <h1 className="heading">Reports</h1> </div>
 <div className="successmsg"></div>
@@ -89,7 +129,7 @@ const fileSelectedHandler = event => {
       </div>
     </form>
     </div>
-
+ </div>
   );
   
 } 

@@ -14,16 +14,16 @@ width:100%;
 }
 
 .heading {
-  padding: 2%;
+  padding: 1%;
   margin-left: 42%;
   text-decoration: underline;
   font-size: 30px;
   color: #fff;
  
 }
-.heading-back {
+/* .heading-back {
   background-color: #d3e4ff;
-}
+} */
 
 .space {
   word-spacing: 30px;

@@ -6,6 +6,9 @@ import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
 import FileSaver from 'file-saver';
  import DownloadLink from "react-download-link";
+import { Routes, Route, Link, Switch } from "react-router-dom";
+import './styles/location.css';
+import './Patients/css/style.css';
 
 
 export default function PatientReport() {
@@ -53,7 +56,62 @@ useEffect(() => {
 
 
 
-return <div className="card"> <div className="heading-back"><h1 className="heading" > View Reports</h1> </div>
+return <div> 
+  <div className="scroll-up-btn">
+  <i className="fas fa-angle-up"></i>
+</div>
+{/* <!--scroll up btn end-->
+<!-- Main wrapper-screen --> */}
+<div className="wrapper" id="main-screen">
+  {/* <!-- Header starts--> */}
+  <header>
+    {/* <!-- Header-top starts--> */}
+    <div className="header-top pad-top-btm pad-lft-rth">
+      <div>
+        {/* <!-- Find a Location Button --> */}
+        <Link to="/location">
+        <button type="button" className="btn-style">
+          <i className="fa-solid fa-location-dot"></i> Find a Location
+        </button>
+        </Link>
+        
+        <button type="button " className="btn-style">
+          {/* <!-- Book a Lab Visit Button --> */}
+          <i className="fa-solid fa-calendar-days"></i> Book a visit
+        </button>
+      
+        <Link to="/report">
+        <button type="button " className="btn-style">
+          {/* <!-- Reports Button --> */}
+          <i className="fa-solid fa-file-chart-column"></i>View Reports
+        </button>
+        </Link>
+        <Link to="/">
+        <button type="button" className="btn-style">
+          <i className="fa-solid fa-location-dot"></i> Home
+        </button>
+        </Link>
+     
+      </div>
+
+      <div className="login-padding">
+        {/* <!-- LogIn Button --> */}
+      
+        {/* <!-- SignUp Button --> */}
+        denzel@email.com
+        <Link to='/login'>
+        <button type="button " id="signup-btn" className="btn-style">
+          <i className="fa-solid fa-right-to-bracket"></i> Logout
+        </button>
+       
+        </Link>
+      </div>
+    </div>
+    </header>
+    {/* <!-- Header-top ends-->*/}
+    </div>
+  
+  <div className="card"> <div className="heading-back"><h1 className="heading" > View Reports</h1> </div>
   <div className="search">
    <input className="form-control" type="text" placeholder="Enter test type..." onChange={(e) => {
      setSearch(e.target.value)
@@ -91,6 +149,6 @@ filteredData.map((patient) => (
   
 {/* //  <div key={index} className="files"><img src={patient.report} alt="file" /></div> */}
 
-
+</div>
 </div>
 } 
