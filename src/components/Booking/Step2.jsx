@@ -1,6 +1,11 @@
-export default function Instructions() {
+import {Button} from "antd";
+import {
+  CheckOutlined,
+} from "@ant-design/icons";
+
+export default function Instructions({onClick}) {
   return (
-    <p className="Instructions">
+    <p className="Instructions w-50 mx-auto">
       <h3>These special tests must be booked by phone:</h3>
       Call to book an appointment or for more information about these tests.
       <div className="row">
@@ -50,6 +55,7 @@ export default function Instructions() {
           </ul>
         </div>
       </div>
+      <Button type="primary" size="large" icon={<CheckOutlined/>} onClick={() => onClick(1)}>Confirm</Button>
     </p>
   );
 }

@@ -2,12 +2,17 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Fragment } from "react/cjs/react.production.min";
 import Patient from "../Patients/Patient";
-import { Calendar, Alert, Steps, Button, Select } from "antd";
-import { CheckOutlined, CloseOutlined } from "@ant-design/icons";
+import { Calendar, Alert, Steps, Button, Select, notification } from "antd";
 import Instructions from "./Step2";
 import Step4 from "./Step4";
 // import Step1 from "./LabLocation";
-import { CaretLeftOutlined, CaretRightOutlined } from "@ant-design/icons";
+import {
+  CaretLeftOutlined,
+  CaretRightOutlined,
+  SmileOutlined,
+  CheckOutlined,
+  CloseOutlined,
+} from "@ant-design/icons";
 
 const { Option } = Select;
 const { Step } = Steps;
@@ -92,9 +97,9 @@ export default function Appointment() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-const locations=[
-  {value:1,text:"credit valley hospital"}
-]
+  const [locations, setLocations] = useState([]);
+  const [selectedLocation, setSelectedLocation] = useState("");
+
   function onInfoChange(info, value) {
     if (info === "firstname") {
       setFirstName(value);
@@ -103,25 +108,56 @@ const locations=[
     } else if (info === "email") {
       setEmail(value);
     } else {
+      console.log(value)
       setPhoneNumber(value);
     }
   }
-*
+
   useEffect(() => {
     axios
-      .get("http://localhost:8080")
+      .get("/location")
       .then((res) => {
         console.log("response", res.data);
-        //setState(res.data)
+        setLocations(res.data);
       })
       .catch((error) => console.log(`Error: ${error}`));
   }, []);
+
+  const saveBooking = async () => {
+    console.log(+selectedLocation + 1);
+    console.log(selectedValue);
+    console.log(firstName);
+    console.log(lastName);
+    console.log(email);
+    console.log(phoneNumber);
+    console.log(value.toDate());
+    axios
+      .post("/booking", {
+        location: selectedLocation,
+        date: value.toDate(),
+        time: selectedValue,
+        firstName,
+        lastName,
+        email,
+        phoneNumber,
+      })
+      .then((res) => {
+        console.log("response", res.data);
+        notification.open({
+          message: "Successfully booked",
+          description:
+            "Your appointment has been booked successfully and you will receive updates via email",
+          icon: <SmileOutlined style={{ color: "#108ee9" }} />,
+        });
+      })
+      .catch((error) => console.log(`Error: ${error}`));
+  };
 
   const onSelect = (value) => {
     console.log(value);
     setValue(value);
   };
-  const options = locations.map(d => <Option key={d.value}>{d.text}</Option>);
+  const options = locations.map((d, i) => <Option key={i}>{d.addres}</Option>);
   return (
     <div className="p-4">
       <div className="d-flex justify-content-between mb-4">
@@ -150,18 +186,14 @@ const locations=[
           />
           <Step
             title="Choose a lab location and date"
-            description="Select a location and date for your appointment"
+            description="Select a location and date"
           />
-          <Step
-            title="Confirmation"
-            description="Provide contact details for confirmation"
-          />
+          <Step title="Confirmation" description="Provide contact details" />
         </Steps>
       </div>
       {step === 0 ? (
         <div>
-          <Instructions />
-          <button onClick={() => setStep(1)}>Confirm</button>
+          <Instructions onClick={() => setStep(1)} />
         </div>
       ) : step === 1 ? (
         <div style={{ padding: "2rem" }}>
@@ -171,24 +203,24 @@ const locations=[
           }`}
         /> */}
           <div className="container-fluid">
-            <div className="row">
-              <div className="col-md-12">
+            <div className="row mb-5">
+              <div className="col-md-6">
+                <label className="mb-3 fs-4">Choose a Location</label>
                 <Select
                   showSearch
-                  // value={this.state.value}
+                  className="w-100"
+                  value={selectedLocation}
                   placeholder="Type to search"
-                  //style={this.props.style}
                   defaultActiveFirstOption={false}
-                  showArrow={false}
-                  filterOption={false}
-                  // onSearch={this.handleSearch}
-                  // onChange={this.handleChange}
-                  notFoundContent={null}
+                  onChange={(value) => setSelectedLocation(value)}
                 >
                   {options}
                 </Select>
               </div>
+            </div>
+            <div className="row">
               <div className="col-md-6">
+                <label className="mb-3 fs-4">Choose a Date and Time</label>
                 <Calendar
                   fullscreen={true}
                   value={value}
@@ -287,8 +319,11 @@ const locations=[
           firstName={firstName}
           lastName={lastName}
           email={email}
+          location={locations[selectedLocation]}
+          dateTime={value.format("DD, MMM YYYY")+ " " +selectedValue}
           phoneNumber={phoneNumber}
           onChange={onInfoChange}
+          onSave={saveBooking}
         />
       )}
     </div>
