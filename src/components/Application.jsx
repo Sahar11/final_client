@@ -1,21 +1,32 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Fragment } from 'react/cjs/react.production.min';
-//import Patient from './Patients/Patient';
 import LabUpload from './LabUpload';
-//import PatientReport from './PatientReport';
 import Patient from './Patients/Patient';
+import LabLocation from './LabLocation';
 import PatientReport from './PatientReport';
 import MainPage from './Patients/MainPage';
 import LoginForm from './Patients/LoginForm';
 import PatientLogin from './Patients/PatientLogin'
 import LabMain from './Patients/LabMain';
 import {Routes, Route} from 'react-router-dom';
-import LabLocation from './LabLocation';
+
 
 import SMSForm from './SMSForm';
-
 export default function Application() {
+  const [state, setState] = useState([]);
+ 
+  
+//   useEffect(() => {
+//     axios.get("http://localhost:8080")
+//     .then((res) => {
+//       console.log('response', res.data);
+//       setState(res.data)
+//     })
+//     .catch(error => console.log(`Error: ${error}`));
+  
+// }, []);
+
 return <Fragment>
    <Routes>
         <Route path="/">
