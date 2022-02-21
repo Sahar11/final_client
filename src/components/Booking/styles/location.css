@@ -1,0 +1,46 @@
+.address {
+  color: #007bff;
+  font-size: 15px;
+}
+.heading {
+  margin-top: 12px;
+  margin-bottom: 20px;
+  margin-left:200px;
+  font-size: 30px;
+  color:#007bff;
+ 
+  font-family: 'Times New Roman', Times, serif;
+}
+.heading-border{
+  border: 1px solid gray;
+  border-radius: 10px;
+  background-image: linear-gradient(#c3e0fc,#99c0fa );
+  margin: 3% 25% 3% 25%;
+}
+.address_space {
+  padding:3% 25% 3% 25%;
+  
+}
+.scroll {
+  overflow-x: scroll;
+  overflow-y: scroll;
+  text-align: center;
+  height:400px;
+}
+.background-border {
+  border: 1px solid black;
+  margin:5% 15%;
+  display:block;
+  border-radius: 10px;
+}
+
+
+.search {
+  padding:6% 30% 5% 30%;
+}
+
+hr {
+  width:50%;
+  
+  margin-left:25%;
+}
