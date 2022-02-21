@@ -1,0 +1,22 @@
+.login-background {
+  display: flex;
+  justify-content: center;
+  margin:15% 30% 15% 30%;
+  padding-top:5%;
+  padding-bottom: 5%;
+  border: 1px solid rgb(177, 176, 176);
+  background-color: rgba(176, 200, 253, 0.5);
+  border-radius: 10px;
+}
+
+.btncenter {
+ display:flex;
+  
+}
+.loginheading {
+  color:rgb(56, 134, 250);
+}
+
+.btn {
+  color:rgb(165, 170, 177) ;
+}

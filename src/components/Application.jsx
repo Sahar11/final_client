@@ -12,17 +12,8 @@ import LabMain from './Patients/LabMain';
 import {Routes, Route} from 'react-router-dom';
 import SMSForm from './SMSForm';
 
-
-
 export default function Application() {
 return <Fragment>
-  
- 
- <div><LabUpload /></div>
- 
-{/* { 
-state.map((user, idx) => <h1 key={idx}> {user.firstname} </h1>) 
-}  */}
    <Routes>
         <Route path="/">
         <Route index element={<MainPage />} />
