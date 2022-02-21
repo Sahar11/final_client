@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Axios from "axios";
-import './css/login.css';
+import '../styles/login.css';
 import 'bootstrap/dist/css/bootstrap.css';
 // Put any other imports below so that CSS from your
 // components takes precedence over default styles.

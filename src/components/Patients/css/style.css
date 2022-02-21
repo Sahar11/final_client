@@ -217,6 +217,9 @@ input[type="date"]::-webkit-datetime-edit-year-field {
   border-top: 2px solid #000;
   border-bottom: 2px solid #000;
 }
+.login-padding {
+  padding-right: 50;
+}
 .input-group {
   display: flex;
   justify-content: space-between;

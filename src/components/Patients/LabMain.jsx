@@ -40,23 +40,24 @@ export default function LabMain() {
         <div>
     
         
-          <button type="button " className="btn-style">
+       <Link to="/labupload">  <button type="button " className="btn-style">
             {/* <!-- Reports Button --> */}
             <i className="fa-solid fa-file-chart-column"></i>Upload Reports
-          </button>
+          </button> </Link>
         </div>
-        <form action='/login'>
+       
         <div>
           {/* <!-- LogIn Button --> */}
  admin@email.com
           
-          
+ <Link to='/login'>
           {/* <!-- SignUp Button --> */}
           <button type="button " id="signup-btn" className="btn-style">
             <i className="fa-solid fa-right-to-bracket"></i> Logout
           </button>
+          </Link>
         </div>
-        </form>
+       
       </div>
       {/* <!-- Header-top ends-->
       <!-- Header-middle starts--> */}

@@ -4,6 +4,8 @@ import logo from './css/images/logo.png';
 import aboutus from './css/images/about-us.jpg';
 import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Routes, Route, Link, Switch } from "react-router-dom";
+import LabLocation from '../LabLocation';
 
 export default function MainPage() {
  
@@ -28,6 +30,8 @@ export default function MainPage() {
      window.location.href="/patient"
   }
 
+
+
   return <div> <div className="scroll-up-btn">
     <i className="fas fa-angle-up"></i>
   </div>
@@ -40,37 +44,37 @@ export default function MainPage() {
       <div className="header-top pad-top-btm pad-lft-rth">
         <div>
           {/* <!-- Find a Location Button --> */}
-          <button type="button " className="btn-style">
+          <Link to="/location">
+          <button type="button" className="btn-style">
             <i className="fa-solid fa-location-dot"></i> Find a Location
           </button>
+          </Link>
+          
           <button type="button " className="btn-style">
             {/* <!-- Book a Lab Visit Button --> */}
-            <i className="fa-solid fa-calendar-days"></i> Book a Lab Visit
+            <i className="fa-solid fa-calendar-days"></i> Book a visit
           </button>
+        
+          <Link to="/report">
           <button type="button " className="btn-style">
             {/* <!-- Reports Button --> */}
-            <i className="fa-solid fa-file-chart-column"></i> Reports
+            <i className="fa-solid fa-file-chart-column"></i>View Reports
           </button>
-          <form action='/sms'>
-          <button type="button " className="btn-style">
-            <i className="fa-solid fa-location-dot"></i> Checkin
-          </button>
-          </form>
+          </Link>
+       
         </div>
 
-        <div>
+        <div className="login-padding">
           {/* <!-- LogIn Button --> */}
-          <form action='/login'>
-          <button type="button " id="login-btn" className="btn-style">
-            <i className="fa-solid fa-user-lock"></i> denzel@email.com
-          </button>
-          
+        
           {/* <!-- SignUp Button --> */}
-       
+          denzel@email.com
+          <Link to='/login'>
           <button type="button " id="signup-btn" className="btn-style">
             <i className="fa-solid fa-right-to-bracket"></i> Logout
           </button>
-          </form>
+         
+          </Link>
         </div>
       </div>
       {/* <!-- Header-top ends-->
