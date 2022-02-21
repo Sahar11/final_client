@@ -32,7 +32,7 @@ export default function LabUpload() {
 
    formData.append('fullname', name);
    formData.append('health', health);
-   formData.append('upload', upload);
+   //formData.append('upload', upload);
    formData.append('test', test);
    formData.append('date', date);
    //console.log("File name: ",formData.get('file').name);

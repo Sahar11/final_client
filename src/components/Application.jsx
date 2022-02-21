@@ -8,9 +8,11 @@ import Patient from './Patients/Patient';
 import PatientReport from './PatientReport';
 import MainPage from './Patients/MainPage';
 import LoginForm from './Patients/LoginForm';
+import PatientLogin from './Patients/PatientLogin'
 import LabMain from './Patients/LabMain';
 import {Routes, Route} from 'react-router-dom';
 import LabLocation from './LabLocation';
+
 import SMSForm from './SMSForm';
 
 export default function Application() {
@@ -24,6 +26,7 @@ return <Fragment>
         <Route path="/location" element={<LabLocation />} />
         <Route path="/report" element={<PatientReport />} />
         <Route path="/labupload" element={<LabUpload />} />
+        <Route path="/patienthome" element={<PatientLogin/>} />
         </Route>
       </Routes>
 {/* <MainPage /> */}

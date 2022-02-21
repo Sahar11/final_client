@@ -50,7 +50,7 @@ export default function LabMain() {
           {/* <!-- LogIn Button --> */}
  admin@email.com
           
- <Link to='/login'>
+ <Link to='/patienthome'>
           {/* <!-- SignUp Button --> */}
           <button type="button " id="signup-btn" className="btn-style">
             <i className="fa-solid fa-right-to-bracket"></i> Logout
