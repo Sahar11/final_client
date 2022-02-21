@@ -41,7 +41,7 @@ export default function LabLocation() {
           </Link>
           <Link to="/">
         <button type="button" className="btn-style">
-          <i className="fa-solid fa-location-dot"></i> Home
+          <i className="fa-solid fa-location-dot"></i> Home 
         </button>
         </Link>
        
