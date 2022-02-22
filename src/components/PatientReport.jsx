@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./styles/report.css";
 import Modal from "react-bootstrap/Modal";
-// import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import "./styles/location.css";
 // import "./Patients/css/style.css";
@@ -68,11 +68,12 @@ export default function PatientReport() {
                   <i className="fa-solid fa-location-dot"></i> Find a Location
                 </button>
               </Link>
-
+              <Link to="/booking">
               <button type="button " className="btn-style">
                 {/* <!-- Book a Lab Visit Button --> */}
                 <i className="fa-solid fa-calendar-days"></i> Book a visit
               </button>
+              </Link>
 
               <Link to="/report">
                 <button type="button " className="btn-style">
