@@ -21,17 +21,22 @@ export default function LabLocation() {
     setIsModalVisible(false);
   };
   const onFinish = (values) => {
-    axios
-      .post("/checkin", { ...values, locationID: locationData.id })
-      .then((res) => {
-        console.log("response", res.data);
-        notification.open({
-          message: "Checkin Update",
-          description: "You will receive a SMS with an estimated waiting time",
-          icon: <SmileOutlined style={{ color: "#108ee9" }} />,
-        });
-      })
-      .catch((error) => console.log(`Error: ${error}`));
+    notification.open({
+      message: "Checkin Update",
+      description: "You will receive a SMS with an estimated waiting time",
+      icon: <SmileOutlined style={{ color: "#108ee9" }} />,
+    });
+    // axios
+    //   .post("/checkin", { ...values, locationID: locationData.id })
+    //   .then((res) => {
+    //     console.log("response", res.data);
+    //     notification.open({
+    //       message: "Checkin Update",
+    //       description: "You will receive a SMS with an estimated waiting time",
+    //       icon: <SmileOutlined style={{ color: "#108ee9" }} />,
+    //     });
+    //   })
+    //   .catch((error) => console.log(`Error: ${error}`));
   };
 
   return (

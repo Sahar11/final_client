@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Fragment } from "react/cjs/react.production.min";
-import Patient from "../Patients/Patient";
-import { Calendar, Alert, Steps, Button, Select, notification } from "antd";
+import { Calendar, Steps, Button, Select, notification } from "antd";
 import Instructions from "./Step2";
 import Step4 from "./Step4";
-// import Step1 from "./LabLocation";
+import { Link } from "react-router-dom";
 import {
   CaretLeftOutlined,
   CaretRightOutlined,
@@ -23,7 +21,6 @@ const unavailable = [
   "02-21-2022",
   "02-22-2022",
 ];
-const timeOnThe25th = ["3:30", "5:00"];
 const timeSlot = [
   ["8:00", "8:10", "8:20", "8:30", "8:40", "8:50"],
   [
@@ -124,13 +121,6 @@ export default function Appointment() {
   }, []);
 
   const saveBooking = async () => {
-    console.log(+selectedLocation + 1);
-    console.log(selectedValue);
-    console.log(firstName);
-    console.log(lastName);
-    console.log(email);
-    console.log(phoneNumber);
-    console.log(value.toDate());
     axios
       .post("/booking", {
         location: selectedLocation,
@@ -159,8 +149,49 @@ export default function Appointment() {
   };
   const options = locations.map((d, i) => <Option key={i}>{d.addres}</Option>);
   return (
-    <div className="p-4">
-      <div className="d-flex justify-content-between mb-4">
+    <div>
+       <header>
+          {/* <!-- Header-top starts--> */}
+          <div className="header-top pad-top-btm pad-lft-rth">
+            <div>
+              {/* <!-- Find a Location Button --> */}
+              <Link to="/location">
+                <button type="button" className="btn-style">
+                  <i className="fa-solid fa-location-dot"></i> Find a Location
+                </button>
+              </Link>
+
+              <button type="button " className="btn-style">
+                {/* <!-- Book a Lab Visit Button --> */}
+                <i className="fa-solid fa-calendar-days"></i> Book a visit
+              </button>
+
+              <Link to="/report">
+                <button type="button " className="btn-style">
+                  {/* <!-- Reports Button --> */}
+                  <i className="fa-solid fa-file-chart-column"></i>View Reports
+                </button>
+              </Link>
+              <Link to="/">
+                <button type="button" className="btn-style">
+                  <i className="fa-solid fa-location-dot"></i> Home
+                </button>
+              </Link>
+            </div>
+
+            <div className="login-padding">
+              {/* <!-- LogIn Button --> */}
+              {/* <!-- SignUp Button --> */}
+              denzel@email.com
+              <Link to="/login">
+                <button type="button " id="signup-btn" className="btn-style">
+                  <i className="fa-solid fa-right-to-bracket"></i> Logout
+                </button>
+              </Link>
+            </div>
+          </div>
+        </header>
+      <div className="d-flex justify-content-between mb-4 mt-4 mx-4">
         <Button
           type="primary"
           icon={<CaretLeftOutlined />}
@@ -178,7 +209,7 @@ export default function Appointment() {
           Next <CaretRightOutlined />
         </Button>
       </div>
-      <div className="mb-4">
+      <div className="mb-4 mx-4" >
         <Steps current={step}>
           <Step
             title="Patient Instructions"

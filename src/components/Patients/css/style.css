@@ -82,11 +82,11 @@ select {
   margin: 0 auto;
   max-width: 80rem;
 }
-.d-flex {
+/* .d-flex {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
 /* screen readers */
 .sr-only {
   position: absolute;
@@ -533,12 +533,12 @@ textarea {
 /* Media query css starts */
 
 /* Desktop resolution */
-@media screen and (min-width: 1366px) and (max-width: 2560px) {
+/* @media screen and (min-width: 1366px) and (max-width: 2560px) {
   .d-flex {
     height: 100vh;
     justify-content: center;
   }
-}
+} */
 
 /* Mobile resolution */
 @media screen and (max-width: 767px) {

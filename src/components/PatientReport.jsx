@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./styles/report.css";
 import Modal from "react-bootstrap/Modal";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import "./styles/location.css";
-import "./Patients/css/style.css";
+// import "./Patients/css/style.css";
 
 export default function PatientReport() {
   const [isOpen, setIsOpen] = useState(false);
@@ -102,7 +102,7 @@ export default function PatientReport() {
         {/* <!-- Header-top ends-->*/}
       </div>
 
-      <div className="card">
+      <div className="reportBackground">
         {" "}
         <div className="heading-back">
           <h1 className="heading"> View Reports</h1>{" "}
@@ -131,6 +131,7 @@ export default function PatientReport() {
                   >
                     Display Report
                   </button>
+                  &nbsp;&nbsp;&nbsp;
                   <button
                     className="btn-sm btn-primary"
                     onClick={() => download(patient.download_url)}
@@ -140,6 +141,7 @@ export default function PatientReport() {
                 </div>
                 <div className="col-lg-3 space">
                   {patient.test_type}
+                  &nbsp;&nbsp;
                   {new Date(patient.date).toLocaleDateString()}{" "}
                 </div>
               </div>

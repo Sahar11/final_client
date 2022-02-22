@@ -4,7 +4,7 @@ import logo from "./css/images/logo.png";
 import aboutus from "./css/images/about-us.jpg";
 import { Link } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import LoginForm from "./LoginForm";
 import Patient from "./Patient";
 

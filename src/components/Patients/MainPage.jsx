@@ -1,9 +1,9 @@
-import "./css/style.css";
+// import "./css/style.css";
 import { useState } from "react";
 import logo from "./css/images/logo.png";
 import aboutus from "./css/images/about-us.jpg";
 import Modal from "react-bootstrap/Modal";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route, Link, Switch } from "react-router-dom";
 import LabLocation from "../LabLocation";
 
@@ -49,12 +49,12 @@ export default function MainPage() {
                   <i className="fa-solid fa-location-dot"></i> Find a Location
                 </button>
               </Link>
-
+              <Link to="/booking">
               <button type="button " className="btn-style">
                 {/* <!-- Book a Lab Visit Button --> */}
                 <i className="fa-solid fa-calendar-days"></i> Book a visit
               </button>
-
+              </Link>
               <Link to="/report">
                 <button type="button " className="btn-style">
                   {/* <!-- Reports Button --> */}

@@ -9,6 +9,7 @@ import MainPage from './Patients/MainPage';
 import LoginForm from './Patients/LoginForm';
 import PatientLogin from './Patients/PatientLogin'
 import LabMain from './Patients/LabMain';
+import Booking from './Booking/Index';
 import {Routes, Route} from 'react-router-dom';
 
 
@@ -38,6 +39,7 @@ return <Fragment>
         <Route path="/report" element={<PatientReport />} />
         <Route path="/labupload" element={<LabUpload />} />
         <Route path="/patienthome" element={<PatientLogin/>} />
+        <Route path="/booking" element={<Booking/>} />
         </Route>
       </Routes>
 {/* <MainPage /> */}
