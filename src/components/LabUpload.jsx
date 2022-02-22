@@ -1,7 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
 import "./styles/lab.css";
-import $ from "jquery";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route, Link, Switch } from "react-router-dom";
 import "./styles/location.css";

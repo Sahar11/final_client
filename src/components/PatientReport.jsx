@@ -102,7 +102,7 @@ export default function PatientReport() {
         {/* <!-- Header-top ends-->*/}
       </div>
 
-      <div className="card">
+      <div className="reportBackground">
         {" "}
         <div className="heading-back">
           <h1 className="heading"> View Reports</h1>{" "}
@@ -131,6 +131,7 @@ export default function PatientReport() {
                   >
                     Display Report
                   </button>
+                  &nbsp;&nbsp;&nbsp;
                   <button
                     className="btn-sm btn-primary"
                     onClick={() => download(patient.download_url)}
@@ -140,6 +141,7 @@ export default function PatientReport() {
                 </div>
                 <div className="col-lg-3 space">
                   {patient.test_type}
+                  &nbsp;&nbsp;
                   {new Date(patient.date).toLocaleDateString()}{" "}
                 </div>
               </div>
