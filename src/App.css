@@ -70,3 +70,10 @@ background-color: #f9f9f9;
 .Instructions .col-md-6{
   margin-top: 1.5rem;
 }
+.Instruction-box{
+  padding: 15px;
+  border: 1px solid gray;
+  border-radius: 18px; 
+  padding-top: 20px;
+  margin-bottom: 15px;
+}

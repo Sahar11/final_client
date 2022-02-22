@@ -10,7 +10,7 @@ export default function Instructions({onClick}) {
       Call to book an appointment or for more information about these tests.
       <div className="row">
         <div className="col-md-6">
-          <h4>In Ontario :</h4>
+          <div className="Instruction-box"><h4>In Ontario :</h4>
           <ul>
             <li>Ambulatory Blood Pressure</li>
             <li>Seminal Analysis</li>
@@ -24,19 +24,24 @@ export default function Instructions({onClick}) {
             <li>QuantiFERON TB Gold</li>
             <li>Contract Services</li>
           </ul>
+          </div>
         </div>
         <div className="col-md-6">
-          <h4>In Saskatchewan :</h4>
+         <div className="Instruction-box"><h4>In Saskatchewan :</h4>
           <ul>
             <li>ECG (available in Regina only)</li>
             <li>Lactose Tolerance (available in Saskatoon only)</li>
           </ul>
+          </div>
+          <div className="Instruction-box">
           <h4>Serving Patients with Autism:</h4>
           <ul>
             <li>Booking Ont. and Sask. autism appointments call here</li>
           </ul>
+          </div> 
         </div>
         <div className="col-12">
+          <div className="Instruction-box">
           <h4>Patient Instructions</h4>
           <h5>Fasting Required</h5>
           Do not eat or drink (except water) for 8-12 hours before the following tests:
@@ -53,6 +58,7 @@ export default function Instructions({onClick}) {
             <li>Homocysteine</li>
             <li>Iron/Transferrin</li>
           </ul>
+          </div>
         </div>
       </div>
       <Button type="primary" size="large" icon={<CheckOutlined/>} onClick={() => onClick(1)}>Confirm</Button>
