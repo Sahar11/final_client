@@ -13,10 +13,9 @@ export default function LabUpload() {
   const [upload, setUpload] = useState("");
   const [test, setTest] = useState("");
   const [date, setDate] = useState("");
+  const[status, setStatus] = useState("");
 
-  $(".btn").click(function () {
-    $(".successmsg").html("Your data has been saved");
-  });
+ 
  
   const onSubmit = (event) => {
     event.preventDefault();
@@ -33,8 +32,15 @@ export default function LabUpload() {
     //console.log("File name: ",formData.get('file').name);
     axios
       .post("http://localhost:8080/lab", formData)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err.data));
+      .then((res) =>{ 
+        console.log(res)
+        setStatus({ type: 'success' });
+      
+      })
+      .catch((err) => {
+        console.log(err.data)
+        setStatus({ type: 'error', err });
+      });
   };
   const fileSelectedHandler = (event) => {
     setUpload(event.target.files[0]);
@@ -80,8 +86,11 @@ export default function LabUpload() {
           {" "}
           <h1 className="heading">Reports</h1>{" "}
         </div>
-        <div className="successmsg"></div>
-
+        {status?.type === 'success' && <p className="successmsg">Data has been saved successfully</p>}
+      {status?.type === 'error' && (
+        <p className="successmsg">Error has occured while saving the data.</p>
+      )}
+       
         <form
           onSubmit={onSubmit}
           className="row g-3"
