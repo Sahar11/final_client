@@ -36,7 +36,7 @@ export default function Instructions({onClick}) {
           <div className="Instruction-box">
           <h4>Serving Patients with Autism:</h4>
           <ul>
-            <li>Booking Ont. and Sask. autism appointments call here</li>
+            <li>Booking Ont. and Sask. autism appointments call here: +5197499766</li>
           </ul>
           </div> 
         </div>
