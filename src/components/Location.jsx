@@ -30,7 +30,7 @@ export default function Location({ getCheckin }) {
     <div className="location-wrapper">
       <div className="search">
         <input
-          className="form-control p-3"
+          className="form-control p-3 shadow"
           type="text"
           size="large"
           placeholder="search ..."
@@ -46,14 +46,22 @@ export default function Location({ getCheckin }) {
         ) : (
           filteredData.map((location, index) => {
             return (
-              <div className="location-card" key={index}>
-                <h5>{location.addres}</h5>
-                <h6>
-                  contact: <i>{location.phone_number}</i>
-                </h6>
-                <Button type="primary" onClick={()=>getCheckin(index+1,location.addres)}>
-                  Checkin
-                </Button>
+              <div className="location-card d-flex" key={index}>
+                <div className="rounded-circle bg-primary text-white d-flex justify-content-center align-items-center me-3" style={{width:"50px", height:"50px"}}>
+                  <span>{index}</span>
+                </div>
+                <div style={{width:"90%"}}>
+                  <h5>{location.addres}</h5>
+                  <h6>
+                    contact: <i>{location.phone_number}</i>
+                  </h6>
+                  <Button
+                    type="primary"
+                    onClick={() => getCheckin(index + 1, location.addres)}
+                  >
+                    Checkin
+                  </Button>
+                </div>
               </div>
             );
           })
