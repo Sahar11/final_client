@@ -11,6 +11,7 @@ import PatientLogin from './Patients/PatientLogin'
 import LabMain from './Patients/LabMain';
 import Booking from './Booking/Index';
 import {Routes, Route} from 'react-router-dom';
+import Appointment from './Appointment';
 
 
 import SMSForm from './SMSForm';
@@ -40,6 +41,7 @@ return <Fragment>
         <Route path="/labupload" element={<LabUpload />} />
         <Route path="/patienthome" element={<PatientLogin/>} />
         <Route path="/booking" element={<Booking/>} />
+        <Route path="/appointments" element={<Appointment/>} />
         </Route>
       </Routes>
 {/* <MainPage /> */}

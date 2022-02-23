@@ -63,6 +63,13 @@ export default function LabUpload() {
                   <i className="fa-solid fa-location-dot"></i> Home
                 </button>
               </Link>
+              <Link to="/appointments">
+                {" "}
+                <button type="button " className="btn-style">
+                  {/* <!-- Reports Button --> */}
+                  <i className="fa-solid fa-file-chart-column"></i>View Appointments
+                </button>{" "}
+              </Link>
             </div>
 
             <div className="login-padding">
