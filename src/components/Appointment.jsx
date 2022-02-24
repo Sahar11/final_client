@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./styles/report.css";
+import "./styles/appointment.css";
 import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
@@ -113,10 +113,11 @@ export default function PatientReport() {
         ) : (
           filteredData.map((appointment) => (
             <div key={appointment.id} className="alignModal">
+              
               <div className="btnCenter row">
               &nbsp;
                 <div className="col-lg-3 space">
-                
+                 <div className="space-top">
                   {appointment.firstname}
                   &nbsp;
                   {appointment.lastname}
@@ -128,7 +129,7 @@ export default function PatientReport() {
                   {new Date(appointment.appointment_date).toLocaleDateString()}{" "}
                   &nbsp;&nbsp;
                   {appointment.appointment}
-                 
+                </div>
                 </div>
               </div>
             </div>
