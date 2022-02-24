@@ -66,6 +66,14 @@ export default function PatientReport() {
                 <i className="fa-solid fa-location-dot"></i> Home
               </button>
             </Link>
+            <Link to="/labupload">
+                {" "}
+                <button type="button " className="btn-style">
+                  {/* <!-- Reports Button --> */}
+                  <i className="fa-solid fa-file-chart-column"></i>Upload
+                  Reports
+                </button>{" "}
+              </Link>
             <Link to="/appointments">
               {" "}
               <button type="button " className="btn-style">
@@ -124,8 +132,6 @@ export default function PatientReport() {
                
                 </div>
                 <div className="col-lg-3 space">
-                  {patient.test_type}
-                  &nbsp;&nbsp;
                   {patient.test_type}
                   &nbsp;&nbsp;
                   {new Date(patient.date).toLocaleDateString()}{" "}
