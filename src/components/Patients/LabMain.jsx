@@ -54,6 +54,13 @@ export default function LabMain() {
                   <i className="fa-solid fa-file-chart-column"></i>View Appointments
                 </button>{" "}
               </Link>
+              <Link to="/labReport">
+              {" "}
+              <button type="button " className="btn-style">
+                {/* <!-- Reports Button --> */}
+                <i className="fa-solid fa-file-chart-column"></i>View Reports
+              </button>{" "}
+            </Link>
             </div>
 
             <div>

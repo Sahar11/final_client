@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./styles/appointment.css";
+import "./styles/report.css";
 import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
@@ -25,15 +25,13 @@ export default function PatientReport() {
     setIsOpen(false);
   };
 
-  const download = (url) => {
-    window.open(url);
-  };
+
 
   const [state, setState] = useState([]);
 
   useEffect(() => {
     axios
-      .get("/appointment")
+      .get("/labReport")
       .then((res) => {
         console.log("response", res.data);
         setState(res.data);
@@ -43,8 +41,8 @@ export default function PatientReport() {
 
   useEffect(() => {
     setFilteredData(
-      state.filter((appointment) =>
-        appointment.appointment_date.toLowerCase().includes(search.toLowerCase())
+      state.filter((patient) =>
+        patient.patient_name.toLowerCase().includes(search.toLowerCase())
       )
     );
   }, [search, state]);
@@ -68,19 +66,11 @@ export default function PatientReport() {
                 <i className="fa-solid fa-location-dot"></i> Home
               </button>
             </Link>
-            <Link to="/labupload">
-                {" "}
-                <button type="button " className="btn-style">
-                  {/* <!-- Reports Button --> */}
-                  <i className="fa-solid fa-file-chart-column"></i>Upload
-                  Reports
-                </button>{" "}
-              </Link>
-              <Link to="/labReport">
+            <Link to="/appointments">
               {" "}
               <button type="button " className="btn-style">
                 {/* <!-- Reports Button --> */}
-                <i className="fa-solid fa-file-chart-column"></i>View Reports
+                <i className="fa-solid fa-file-chart-column"></i>View Appointments
               </button>{" "}
             </Link>
           </div>
@@ -103,7 +93,7 @@ export default function PatientReport() {
       <div className="reportBackground">
         {" "}
         <div className="heading-back">
-          <h1 className="heading"> View Appointments</h1>{" "}
+          <h1 className="heading"> View Reports</h1>{" "}
         </div>
         <div className="search">
           <input
@@ -118,31 +108,51 @@ export default function PatientReport() {
         {filteredData.length === 0 ? (
           <div className="search">No result found</div>
         ) : (
-          filteredData.map((appointment) => (
-            <div key={appointment.id} className="alignModal">
-              
+          filteredData.map((patient) => (
+            <div key={patient.id} className="alignModal">
               <div className="btnCenter row">
-              &nbsp;
-                <div className="col-lg-3 space">
-                 <div className="space-top">
-                  {appointment.firstname}
-                  &nbsp;
-                  {appointment.lastname}
-                  &nbsp;
-                  {appointment.phoneumber}
+                <div className="col-lg-8">
+                {patient.patient_name}
                   &nbsp;&nbsp;
-                  {appointment.email}
-                  &nbsp;&nbsp;
-                  {new Date(appointment.appointment_date).toLocaleDateString()}{" "}
-                  &nbsp;&nbsp;
-                  {appointment.appointment}
+                  {" "}
+                  <button
+                    className="btn-sm btn-primary"
+                    onClick={() => showModal(patient)}
+                  >
+                    Display Report
+                  </button>
+               
                 </div>
+                <div className="col-lg-3 space">
+                  {patient.test_type}
+                  &nbsp;&nbsp;
+                  {patient.test_type}
+                  &nbsp;&nbsp;
+                  {new Date(patient.date).toLocaleDateString()}{" "}
                 </div>
               </div>
             </div>
           ))
         )}
-     
+        <Modal show={isOpen} onHide={hideModal} size="lg">
+          <Modal.Header>
+            <Modal.Title>{title}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <img
+              src={patient.report_url}
+              alt="report"
+              width="600px"
+              height="600px"
+            />
+          </Modal.Body>
+          <Modal.Footer>
+            <button className="btn btn-primary" onClick={hideModal}>
+              Close
+            </button>
+          </Modal.Footer>
+        </Modal>
+        {/* //  <div key={index} className="files"><img src={patient.report} alt="file" /></div> */}
       </div>
     </div>
   );
